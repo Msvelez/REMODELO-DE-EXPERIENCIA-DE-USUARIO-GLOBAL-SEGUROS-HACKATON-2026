@@ -1,16 +1,36 @@
 :root {
-    --azul: #00327D;
-    --azul-oscuro: #001F52;
-    --azul-claro: #E8EEF8;
-    --rojo: #DC2319;
-    --blanco: #FFFFFF;
-    --gris-claro: #F5F6FA;
-    --gris-medio: #8A8EA0;
-    --gris-texto: #3A3D50;
-    --dorado: #C9962A;
+  /* --- COLORES PRINCIPALES --- */
+  --azul-global: #00327D;
+  --rojo-global: #DC2319;
+  --blanco: #FFFFFF;
+   
+  /* --- COLORES DE LOS SEGUROS --- */
+  --educacion: #0087DC;
+  --pension-vol: #00B47B;
+  --renta-vol: #9B5091;
+  --vida: #FF5555;
+  --renta-vitalicia: #F0A000;
+  --previsional: #8C5F46;
+  --accidentes: #8E2D55;
+
+
+  /* --- VARIACIONES PARA INTERFAZ --- */
+  --azul-oscuro: #001F52; 
+  --azul-claro: #E8EEF8;
+  --gris-claro: #F5F6FA;
+  --gris-medio: #8A8EA0;
+  --gris-texto: #323232;
+}
+  * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+
+  html { 
+    scroll-behavior: smooth; 
+  }
+
   body {
     font-family: 'Asap', sans-serif;
     color: var(--gris-texto);
