@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda - GlobalMás Profesional</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="marketplace.css">
+</head>
+
+<body>
+  <nav>
+    <div class="logotipo">
+      <img src="../multimedia/logo-globalseguros-2025.svg" alt="Global Seguros Logo" class="logotipo-imagen" style="max-width: 150px;">
+    </div>
+    <ul>
+      <li><a href="../index/index.html">Inicio</a></li>
+      <li><a href="marketplace.html" class="navegacion-llamado-accion">Tienda</a></li>
+      <li><a href="../index/index.html#beneficios">Beneficios</a></li>
+      <li><a href="../index/index.html#faq">Preguntas</a></li>
+    </ul>
+  </nav>
+   
+  <section class="marketplace-banner">
+    <h1>Nuestros Planes de Protección</h1>
+    <p>Elige el plan que mejor se adapte a las necesidades de tu familia</p>
+  </section>
+   
+  <section class="marketplace-contenedor">
+    <div class="marketplace-productos" id="productos-grid"></div>
+   
+    <aside class="carrito-sidebar">
+      <div class="carrito-titulo">
+        🛒 Tu Carrito
+        <span class="carrito-contador" data-carrito-contador style="display: none;">0</span>
+      </div>
+   
+      <div data-carrito-items class="carrito-vacio">
+        Tu carrito está vacío
+      </div>
+   
+      <div class="carrito-resumen" style="display: none;" id="carrito-resumen-container">
+        <div class="carrito-resumen-item">
+          <span>Subtotal:</span>
+          <span>$0</span>
+        </div>
+        <div class="carrito-resumen-item">
+          <span>Envío:</span>
+          <span>Gratuito</span>
+        </div>
+        <div class="carrito-resumen-total" data-carrito-total>$0</div>
+      </div>
+   
+      <button class="btn-checkout" id="btn-checkout" style="display: none;" onclick="irAlCheckout()">
+        Finalizar Compra
+      </button>
+      <a href="../index/index.html" class="btn-seguir-comprando">Volver al Inicio</a>
+    </aside>
+  </section>
+   
+  <div data-notificaciones></div>
+   
+  <footer>
+    <div class="pie-superior">
+      <div class="pie-marca">
+        <div class="logotipo-texto">
+          <img src="../multimedia/logo2-1.png" alt="Global Seguros Logo" style="max-width: 150px;">
+        </div>
+        <p>Transformamos la complejidad de los seguros en un camino digital fluido y sin fricciones para la familia colombiana.</p>
+      </div>
+      <div class="pie-columna">
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="#">GlobalMás Profesional</a></li>
+          <li><a href="#">GlobalPregrado</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-inferior">
+      <span>© 2026 Global Seguros de Vida S.A. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+   
+  <script src="../index/main.js"></script>
+  <script src="tienda.js"></script>
+</body>
+</html>
