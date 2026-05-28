@@ -6,7 +6,7 @@ function toggleFaq(btn) {
   if (!isOpen) item.classList.add('abierto');
 }
 
-// Smooth reveal on scroll
+// scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -23,10 +23,40 @@ document.querySelectorAll('.dolor-tarjeta, .beneficio-tarjeta, .testimonio-tarje
   observer.observe(el);
 });
 
-// How-steps interaction
+// pasos
 document.querySelectorAll('.como-paso').forEach((step, i) => {
   step.addEventListener('click', () => {
     document.querySelectorAll('.como-paso').forEach(s => s.classList.remove('activo'));
     step.classList.add('activo');
   });
+});
+
+// Carrusel
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("carrusel-track");
+    
+    if (track) {
+        const tarjetas = track.querySelectorAll(".carrusel-tarjeta");
+        const totalImagenes = tarjetas.length;
+        let indiceActual = 0;
+
+        const autoDeslizar = () => {
+            // Incrementamos el índice para pasar a la siguiente imagen
+            indiceActual++;
+
+            // Si llegamos al final (después de la tercera), reseteamos al primer elemento
+            if (indiceActual >= totalImagenes) {
+                indiceActual = 0;
+            }
+
+            // Calculamos la posición exacta multiplicando el ancho del contenedor por el índice
+            const posicionDestino = track.offsetWidth * indiceActual;
+            
+            // Forzamos el scroll horizontal a esa posición exacta
+            track.scrollLeft = posicionDestino;
+        };
+
+        // Configura el temporizador (3500 milisegundos = 3.5 segundos)
+        setInterval(autoDeslizar, 3500);
+    }
 });
