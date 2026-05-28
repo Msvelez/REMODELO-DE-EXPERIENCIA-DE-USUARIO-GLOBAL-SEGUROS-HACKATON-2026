@@ -351,7 +351,7 @@ nav ul a:hover {
 .dolor-tarjeta .icono {
   width: 48px; height: 48px; 
   border-radius: 12px;
-  background: var(--rojo-global);
+  background: var(--azul-global);
   display: flex; 
   align-items: center; 
   justify-content: center;
@@ -917,3 +917,4 @@ footer {
         height: 300px; 
     }
     
+  }
