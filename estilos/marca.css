@@ -16,8 +16,8 @@
 
   /* --- VARIACIONES PARA INTERFAZ --------------------------------------------- */
   --azul-oscuro: #001F52; 
-  --azul-claro: #E8EEF8;
-  --gris-claro: #F5F6FA;
+  --azul-claro: #c9ddfd;
+  --gris-claro: #c9cbd5;
   --gris-medio: #8A8EA0;
   --gris-texto: #323232;
 }
@@ -117,7 +117,7 @@ nav ul a:hover {
   text-transform: uppercase;
   margin-bottom: 2%; 
   width: fit-content;
-  color: var(--rojo-global);
+  color: var(--gris-medio);
   margin-bottom: 12px;
 }
 
@@ -340,8 +340,9 @@ nav ul a:hover {
   background: var(--blanco);
   border-radius: 16px;
   padding: 28px;
-  border-left: 4px solid var(--rojo-global);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 4px solid var(--renta-vitalicia);
+  transition: transform 0.2s, 
+  box-shadow 0.2s;
 }
 .dolor-tarjeta:hover { 
   transform: translateY(-4px); 
@@ -349,9 +350,10 @@ nav ul a:hover {
 }
 
 .dolor-tarjeta .icono {
-  width: 48px; height: 48px; 
+  width: 48px; 
+  height: 48px; 
   border-radius: 12px;
-  background: var(--azul-global);
+  background: var(--azul-claro);
   display: flex; 
   align-items: center; 
   justify-content: center;
@@ -359,7 +361,8 @@ nav ul a:hover {
   margin-bottom: 16px;
 }
 
-.dolor-tarjeta h3 { font-size: 16px; 
+.dolor-tarjeta h3 { 
+  font-size: 16px; 
   font-weight: 700; 
   color: var(--azul-oscuro); 
   margin-bottom: 8px; 
@@ -385,24 +388,34 @@ nav ul a:hover {
   position: relative;
 }
 .dolor-flecha-linea::after {
-  content: ''; position: absolute; bottom: 0; left: 50%;
+  content: ''; 
+  position: absolute; 
+  bottom: 0; 
+  left: 50%;
   transform: translateX(-50%);
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 12px solid var(--azul);
+  border-top: 12px solid var(--azul-global);
 }
 
 /* PROPUESTA DE VALOR */
 .seccion-valor {
   padding: 100px 8%;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: center;
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  gap: 80px; 
+  align-items: center;
 }
+
+.nombre-producto {
+  color: var(--rojo-global);
+}
+
 .valor-visual {
   position: relative;
 }
 .valor-tarjeta-principal {
-  background: var(--azul);
+  background: var(--azul-global);
   border-radius: 24px;
   padding: 48px;
   color: var(--blanco);
@@ -425,43 +438,85 @@ nav ul a:hover {
 }
 
 .valor-tarjeta-principal h2 span { 
-  color: var(--amarillo); 
+  color: var(--renta-vitalicia); 
 }
 
 .valor-lista-caracteristicas {
-  list-style: none; margin-top: 28px;
+  list-style: none; 
+  margin-top: 28px;
 }
 
 .valor-lista-caracteristicas li {
-  display: flex; align-items: flex-start; gap: 12px;
-  margin-bottom: 14px; font-size: 14px; opacity: 0.9;
+  display: flex; 
+  align-items: flex-start; 
+  gap: 12px;
+  margin-bottom: 14px; 
+  font-size: 14px; 
+  opacity: 0.9;
 }
-
+.circulo-verificacion {
+  width: 20px; 
+  height: 20px; 
+  border-radius: 50%;
+  background: var(--renta-vitalicia);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-size: 12px; 
+}
 
 .valor-mini-tarjetas {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 12px;
+  font-weight: bold;
   margin-top: 16px;
 }
-.valor-mini-tarjeta {
-  background: white;
-  border-radius: 12px; padding: 18px;
-  border: 1px solid rgba(0,50,125,0.08);
-  text-align: center;
-}
-.valor-mini-tarjeta .grande { font-size: 28px; font-weight: 700; color: var(--azul); }
-.valor-mini-tarjeta .pequeno { font-size: 12px; color: var(--gris-medio); margin-top: 4px; }
 
-.valor-contenido .seccion-etiqueta { margin-top: 0; }
-.valor-contenido .seccion-titulo { margin-bottom: 24px; }
-.valor-contenido p {
-  font-size: 16px; line-height: 1.7; color: var(--gris-medio);
+.valor-mini-tarjeta {
+  background: var(--blanco);
+  border-radius: 12px; 
+  padding: 18px;
+  border: 1px solid var(--gris-claro);
+  text-align: center; 
+  transition: transform 0.2s, 
+  box-shadow 0.2s;
+}
+.valor-mini-tarjeta:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 12px 40px var(--gris-medio); 
+}
+
+.valor-mini-tarjeta .grande { 
+  font-size: 28px; 
+  font-weight: 700; 
+  color: var(--azul-global); 
+}
+
+.valor-mini-tarjeta .pequeno { 
+  font-size: 12px; 
+  color: var(--gris-medio); 
+  margin-top: 4px; 
+}
+
+.valor-contenido .seccion-titulo { 
+  margin-bottom: 24px; 
+}
+
+.valor-contenido {
+  font-size: 16px; 
+  line-height: 1.7; 
+  color: var(--gris-texto);
   margin-bottom: 20px;
 }
-.valor-contenido strong { color: var(--gris-texto); }
+
+.valor-contenido strong { 
+  color: var(--gris-texto); 
+}
 .caja-promesa {
   background: var(--azul-claro);
   border-radius: 12px; padding: 20px 24px;
-  border-left: 4px solid var(--azul);
+  border-left: 4px solid var(--azul-global);
   margin: 28px 0;
 }
 .caja-promesa p {
