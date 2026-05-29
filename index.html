@@ -3,74 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda - GlobalMás Profesional</title>
+  <title>GlobalMás Profesional</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="marca.css">
+  <link rel="stylesheet" href="estilos/marca.css">
 </head>
-
+ 
 <body>
   <nav>
     <div class="logotipo">
-      <img src="../multimedia/logo-globalseguros-2025.svg" alt="Global Seguros Logo" class="logotipo-imagen" style="max-width: 150px;">
+      <img src="multimedia/logo-globalseguros-2025.svg" alt="Global Seguros Logo" class="logotipo-imagen" style="max-width: 150px;">
     </div>
     <ul>
   <li><a href="index.html">Inicio</a></li>
-  <li><a href="../marketplace/marketplace.html" class="navegacion-llamado-accion">Tienda</a></li>
+  <li><a href="marketplace/marketplace.html">Tienda</a></li>
   <li><a href="index.html#beneficios">Beneficios</a></li>
   <li><a href="index.html#faq">Preguntas</a></li>
 </ul>
   </nav>
 
-<!-- HERO -->
+<!-- HERO ------------------------------------------------------------------------------------->
 <section class="principal">
-  <div class="principal-izquierdo">
-    <span class="principal-etiqueta">GlobalMás Profesional</span>
-    <h1>
-      Asegura el futuro<br>
-      <span class="destacado">profesional</span><br>
-      de tu hijo hoy
-    </h1>
-    <p class="principal-subtitulo">
-      No estás comprando un seguro. Estás construyendo un <strong>escudo ante cualquier adversidad</strong> para que tu hijo llegue a su sueño profesional, pase lo que pase.
-    </p>
-    <div class="principal-acciones">
-      <a href="#cta" class="boton-primario">Proteger a mi hijo ahora</a>
-      <a href="#journey" class="boton-secundario">Ver cómo funciona</a>
-    </div>
-    <div class="principal-confianza">
-      <div class="confianza-estadistica">
-        <span class="numero">AA+</span>
-        <span class="leyenda">Calificación 2025</span>
-      </div>
-      <div class="confianza-divisor"></div>
-      <div class="confianza-estadistica">
-        <span class="numero">+40K</span>
-        <span class="leyenda">Familias protegidas</span>
-      </div>
-      <div class="confianza-divisor"></div>
-      <div class="confianza-estadistica">
-        <span class="numero">25+</span>
-        <span class="leyenda">Años de experiencia</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="principal-derecho">
-    <div class="principal-contenedor-foto">
-      <div class="principal-marcador-foto">
-        <div class="principal-ilustracion-familia">
-          <div class="icono-familia">👨‍👩‍👧</div>
-          <p style="color:rgba(255,255,255,0.7); font-size:15px; text-align:center; line-height:1.5;">
-            Tu amor hoy<br>= su futuro mañana
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="principal-derecho-forma"></div>
-    <div class="principal-derecho-forma2"></div>
-    <!-- Floating cards -->
+  
     <div class="principal-tarjeta-flotante tarjeta1">
       <div class="tarjeta-icono-fondo verde">✅</div>
       <div>
@@ -78,6 +33,7 @@
         <div class="tarjeta-leyenda">María C. · Hace 2 min</div>
       </div>
     </div>
+    
     <div class="principal-tarjeta-flotante tarjeta2">
       <div class="tarjeta-icono-fondo azul">🎓</div>
       <div>
@@ -85,13 +41,69 @@
         <div class="tarjeta-leyenda">Pago flexible · Sin endeudarse</div>
       </div>
     </div>
+  <div class="principal-informacion">
+    <span class="etiqueta">GlobalMás Profesional</span>
+
+    <h1>
+      Asegura el futuro<br>
+      <span class="destacado">profesional</span><br>
+      de tu hijo hoy
+    </h1>
+
+    <p class="principal-texto">
+      No estás comprando un seguro. Estás construyendo un 
+      <strong>escudo ante cualquier adversidad</strong>
+      para que tu hijo llegue a su sueño profesional, pase lo que pase.
+    </p>
+
+    <div class="principal-acciones">
+      <a href="#cta" class="boton-primario">Proteger a mi hijo ahora</a>
+      <a href="#journey" class="boton-secundario">Ver cómo funciona</a>
+    </div>
+
+    <div class="principal-confianza">
+      <div class="confianza-estadistica">
+        <span class="numero">AA+</span>
+        <span class="leyenda">Calificación 2025</span>
+      </div>
+
+      <div class="confianza-divisor"></div>
+      
+      <div class="confianza-estadistica">
+        <span class="numero">+40K</span>
+        <span class="leyenda">Familias protegidas</span>
+      </div>
+
+      <div class="confianza-divisor"></div>
+      
+      <div class="confianza-estadistica">
+        <span class="numero">25+</span>
+        <span class="leyenda">Años de experiencia</span>
+      </div>
+    </div>
   </div>
+
+  <div class="contenedor-carrusel">
+  
+  <div class="carrusel-track" id="carrusel-track">
+    <div class="carrusel-tarjeta">
+      <img src="multimedia/heroimgcerca.png" alt="Descripción 1" class="carrusel-img">
+    </div>
+    <div class="carrusel-tarjeta">
+      <img src="multimedia/heroimgdefrente.png" alt="Descripción 2" class="carrusel-img">
+    </div>
+    <div class="carrusel-tarjeta">
+      <img src="multimedia/heroimgespaldas.png" alt="Descripción 3" class="carrusel-img">
+    </div>
+  </div>
+
+</div>
 </section>
 
-<!-- PUNTOS DE DOLOR -->
+<!-- PUNTOS DE DOLOR ----------------------------------------------------------------->
 <section class="seccion-dolor">
-  <p class="seccion-etiqueta">Entendemos tus miedos</p>
-  <h2 class="seccion-titulo">Sabemos lo que más te preocupa como mamá</h2>
+  <p class="etiqueta">Entendemos tus miedos</p>
+  <h2 class="seccion-title">Sabemos lo que más te preocupa como mamá</h2>
   <div class="dolor-cuadricula">
     <div class="dolor-tarjeta">
       <div class="icono">😟</div>
@@ -116,12 +128,14 @@
   </div>
 </section>
 
-<!-- PROPUESTA DE VALOR -->
+<!-- PROPUESTA DE VALOR --------------------------------------------------------------------------------------->
 <section class="seccion-valor">
   <div class="valor-visual">
     <div class="valor-tarjeta-principal">
       <p class="nombre-producto">GlobalMás Profesional</p>
-      <h2>Tu hijo llega a la<br><span>universidad</span>,<br>pase lo que pase</h2>
+      <h2>Tu hijo llega a la<br>
+        <span>universidad</span>
+        ,<br>pase lo que pase</h2>
       <ul class="valor-lista-caracteristicas">
         <li>
           <span class="circulo-verificacion">✓</span>
@@ -162,8 +176,8 @@
   </div>
 
   <div class="valor-contenido">
-    <p class="seccion-etiqueta">Nuestra promesa</p>
-    <h2 class="seccion-titulo">No vendes un seguro.<br>Construyes un futuro.</h2>
+    <p class="etiqueta">Nuestra promesa</p>
+    <h2 class="seccion-title">No vendes un seguro.<br>Construyes un futuro.</h2>
     <p>
       Cada peso que aportas cada mes no es un gasto: es una inversión directa en el <strong>sueño profesional de tu hijo</strong>. Global Más Profesional garantiza que su camino universitario esté protegido incluso en tu ausencia.
     </p>
@@ -177,7 +191,7 @@
   </div>
 </section>
 
-<!-- CUSTOMER JOURNEY -->
+<!-- CUSTOMER JOURNEY -------------------------------------------------->
 <section class="seccion-experiencia" id="journey">
   <div class="experiencia-encabezado">
     <p class="seccion-etiqueta">El camino contigo</p>
@@ -186,7 +200,7 @@
   </div>
 
   <div class="experiencia-pasos">
-    <!-- Paso 1 -->
+    <!-- Paso 1 -------------------------------------------------------------->
     <div class="experiencia-paso paso-num-1">
       <div class="paso-numero">1</div>
       <div class="paso-conector">
@@ -204,7 +218,7 @@
       </div>
     </div>
 
-    <!-- Paso 2 -->
+    <!-- Paso 2 -------------------------------------------->
     <div class="experiencia-paso paso-num-2">
       <div class="paso-numero">2</div>
       <div class="paso-conector">
@@ -222,7 +236,7 @@
       </div>
     </div>
 
-    <!-- Paso 3 -->
+    <!-- Paso 3 ----------------------------------->
     <div class="experiencia-paso paso-num-3">
       <div class="paso-numero">3</div>
       <div class="paso-conector">
@@ -240,7 +254,7 @@
       </div>
     </div>
 
-    <!-- Paso 4 -->
+    <!-- Paso 4 ------------------------------------------------>
     <div class="experiencia-paso paso-num-4">
       <div class="paso-numero">4</div>
       <div class="paso-conector">
@@ -258,7 +272,7 @@
       </div>
     </div>
 
-    <!-- Paso 5 -->
+    <!-- Paso 5 ------------------------------------------------>
     <div class="experiencia-paso paso-num-5">
       <div class="paso-numero">5</div>
       <div class="paso-cuerpo">
@@ -281,14 +295,13 @@
   </div>
 </section>
 
-<!-- CÓMO FUNCIONA -->
+<!-- CÓMO FUNCIONA ------------------------------------------------------------------------------------------------------->
 <section class="seccion-como" id="how">
   <div class="como-encabezado">
     <div>
-      <p class="seccion-etiqueta">Proceso simple</p>
+      <p class="etiqueta">Proceso simple</p>
       <h2 class="seccion-title">Tu hijo protegido en 3 pasos</h2>
-      <p style="margin-top:16px; color:var(--gris-medio); font-size:15px; line-height:1.7;">
-        Sin papeleo, sin tecnicismos, sin esperas. El proceso más sencillo del mercado asegurador colombiano.
+      <p>Sin papeleo, sin tecnicismos, sin esperas. El proceso más sencillo del mercado asegurador colombiano.
       </p>
     </div>
     <div class="como-visual">
@@ -303,8 +316,7 @@
           <div class="pantalla-boton boton-acento"></div>
         </div>
       </div>
-      <p style="color:rgba(255,255,255,0.5); font-size:12px; margin-top:12px; text-align:center;">
-        Interfaz simple · 100% móvil
+      <p>Interfaz simple · 100% móvil
       </p>
     </div>
   </div>
@@ -334,10 +346,10 @@
   </div>
 </section>
 
-<!-- BENEFICIOS -->
+<!-- BENEFICIOS --------------------------------------------------------------------------------->
 <section class="seccion-beneficios" id="beneficios">
-  <p class="seccion-etiqueta">Por qué elegirnos</p>
-  <h2 class="seccion-titulo">Una solución hecha para la familia colombiana</h2>
+  <p class="etiqueta">Por qué elegirnos</p>
+  <h2 class="seccion-title">Una solución hecha para la familia colombiana</h2>
   <div class="beneficios-cuadricula">
     <div class="beneficio-tarjeta">
       <div class="beneficio-icono">🛡️</div>
@@ -372,7 +384,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIOS -->
+<!-- TESTIMONIOS -------------------------------------------------->
 <section class="seccion-testimonios">
   <p class="seccion-etiqueta">Lo que dicen las familias</p>
   <h2 class="seccion-titulo">Familias que ya construyeron el futuro de sus hijos</h2>
@@ -413,11 +425,11 @@
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- FAQ --------------------------------------->
 <section class="seccion-preguntas" id="faq">
   <div class="preguntas-izquierdo">
-    <p class="seccion-etiqueta">Preguntas frecuentes</p>
-    <h2 class="seccion-titulo">Resolvemos todas tus dudas</h2>
+    <p class="etiqueta">Preguntas frecuentes</p>
+    <h2 class="seccion-title">Resolvemos todas tus dudas</h2>
     <p>Transparencia total. Si no encuentras tu respuesta aquí, un asesor humano te responde en minutos.</p>
     <a href="#cta" class="boton-primario">Hablar con un asesor</a>
   </div>
@@ -470,7 +482,7 @@
   </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- CTA FINAL --------------------------------------------------------------->
 <section class="seccion-llamado-accion" id="cta">
   <div class="llamado-accion-circulos">
     <div class="llamado-accion-circulo" style="width:300px;height:300px;"></div>
@@ -494,9 +506,9 @@
 <footer>
   <div class="pie-superior">
     <div class="pie-marca">
-      <div class="logotipo-texto"><img src="../multimedia/logo2-1.png" alt="Global Seguros Logo" class="logotipo-imagen"></div>
+      <div class="logotipo-texto"><img src="multimedia/logo2-1.png" alt="Global Seguros Logo" class="logotipo-imagen"></div>
       <p>Transformamos la complejidad de los seguros en un camino digital fluido y sin fricciones para la familia colombiana.</p>
-      <div class="pie-aa" style="margin-top:24px; width:fit-content;">
+      <div class="pie-aa">
         <span class="aa-distintivo">AA+</span>
         <div class="aa-texto">Calificación<br>Global Seguros de Vida 2025</div>
       </div>
@@ -539,6 +551,6 @@
  <!-- Contenedor de notificaciones -->
   <div data-notificaciones></div>
   
-  <script src="main.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>

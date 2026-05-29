@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* --- COLORES PRINCIPALES --- */
+  --azul-global: #00327D;
+  --rojo-global: #DC2319;
+  --blanco: #FFFFFF;
+   
+  /* --- COLORES DE LOS SEGUROS --- */
+  --educacion: #0087DC;
+  --pension-vol: #00B47B;
+  --renta-vol: #9B5091;
+  --vida: #FF5555;
+  --renta-vitalicia: #F0A000;
+  --previsional: #8C5F46;
+  --accidentes: #8E2D55;
+
+
+  /* --- VARIACIONES PARA INTERFAZ --- */
+  --azul-oscuro: #001F52; 
+  --azul-claro: #E8EEF8;
+  --gris-claro: #F5F6FA;
+  --gris-medio: #8A8EA0;
+  --gris-texto: #323232;
+}
+
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  font-family: 'Asap', sans-serif;
+  font-weight: bold;
+  background: var(--azul-global);
+  color: var(--blanco);
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.numero-error-404 {
+  font-size: 5em;
+  font-weight: bold;
+  color: var(--rojo-global);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2em;
+  color: var(--rojo-global) ;
+  margin-bottom: 16px;
+}
+
+.mensaje {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+
+.boton {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 28px;
+  background-color: var(--rojo-global);
+  color: var(--blanco);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.contenedor-boton :hover {
+  background-color: var(--blanco);
+  text-decoration: none;
+  color: var(--rojo-global);
+}
+
+/* NAV */
+  nav {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 100;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--gris-claro);
+    padding: 0 5%;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    height: 68px;
+  }
+  .logotipo {
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+  }
+  .logotipo-imagen {
+    height: 40px; 
+    width: auto; 
+  }
+  
