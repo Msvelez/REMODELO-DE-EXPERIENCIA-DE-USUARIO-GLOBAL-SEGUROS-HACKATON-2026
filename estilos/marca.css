@@ -557,7 +557,6 @@ nav ul a:hover {
 .experiencia-encabezado .seccion-titulo {
   color: var(--blanco); 
   margin: 0 auto;
-  text-align: center;
 }
 .experiencia-encabezado p {
   color: var(--gris-claro); 
