@@ -1,7 +1,8 @@
 // Inicialización del estado global del carrito
-let carrito = []; 
+let carrito = []; // array para almacenar los productos agregados al carrito
 
 // Simulación controlada por si main.js no carga la función origen
+// funcion asincrona que simula la carga de productos desde un archivo externo (JSON, API, etc.)
 async function cargarProductos() {
   if (typeof window.cargarProductosDesdeArchivo === 'function') {
     return await cargarProductosDesdeArchivo();
