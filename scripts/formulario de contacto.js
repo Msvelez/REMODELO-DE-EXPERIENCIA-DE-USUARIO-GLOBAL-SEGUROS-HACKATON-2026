@@ -1,7 +1,6 @@
 document.getElementById('form-contacto').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  // Limpiar estados previos
   document.querySelectorAll('.campo').forEach(c => c.classList.remove('error', 'ok'));
   document.querySelectorAll('.campo-error').forEach(e => e.textContent = '');
 
