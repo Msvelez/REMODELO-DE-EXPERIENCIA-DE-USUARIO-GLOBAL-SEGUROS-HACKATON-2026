@@ -8,7 +8,7 @@
 
 .contacto-izquierdo p {
   font-size: 15px;
-  color: var(--gris-medio);
+  color: #8A8EA0;
   line-height: 1.7;
   margin-top: 16px;
 }
@@ -26,7 +26,7 @@
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  color: var(--gris-texto);
+  color:  #323232;
 }
 
 .contacto-derecho form {
