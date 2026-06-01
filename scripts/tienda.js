@@ -1,10 +1,10 @@
-// Inicialización del estado global del carrito
-let carrito = []; 
+// Inicialización del estado global del carrito 
+let carrito = JSON.parse(localStorage.getItem('carrito')) || []; 
 
-// FUNCIÓN CORREGIDA: Ahora se conecta de forma real a tu archivo JSON externo
+// FUNCIÓN: Conexión real al archivo JSON externo
 async function cargarProductos() {
   try {
-    const respuesta = await fetch('productos.json'); // Asegúrate de correrlo usando Live Server de VS Code
+    const respuesta = await fetch('productos.json'); // Requiere usar Live Server en VS Code
     
     if (!respuesta.ok) {
       throw new Error(`Error al cargar el JSON: ${respuesta.status}`);
@@ -15,7 +15,7 @@ async function cargarProductos() {
     
   } catch (error) {
     console.error("Hubo un problema obteniendo los productos desde el JSON:", error);
-    // Mock de respaldo para que la app no se rompa si el JSON falla temporalmente
+    // Mock de respaldo por seguridad
     return {
       productos: [
         { 
@@ -92,7 +92,7 @@ function calcularTotal() {
   return carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
 }
 
-// Actualiza las cantidades de inputs de forma fluida y sin crasheos
+// Actualiza las cantidades de inputs de forma fluida
 function actualizarCantidad(id, nuevaCantidad) {
   const item = carrito.find(item => item.id === id);
   if (item) {
@@ -110,7 +110,7 @@ function eliminarDelCarrito(id) {
   actualizarVistaCarrito();
 }
  
-// RENDERIZADO INTERACTIVO: Controla el refresco dinámico sin pintar subtotal ni envío
+// RENDERIZADO INTERACTIVO: Sincroniza la interfaz y guarda el estado en el navegador
 function actualizarVistaCarrito() {
   const contenedor = document.querySelector('[data-carrito-items]');
   const totalElement = document.querySelector('[data-carrito-total]');
@@ -118,6 +118,9 @@ function actualizarVistaCarrito() {
   const btnCheckout = document.getElementById('btn-checkout');
   const contadorElement = document.querySelector('[data-carrito-contador]');
   
+  // Guardado de persistencia clave para conectar con la página de checkout
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
   if (!contenedor) return;
 
   if (carrito.length === 0) {
@@ -156,6 +159,9 @@ function actualizarVistaCarrito() {
   }
 }
  
+// Redirección con empaquetado final de seguridad
 function irAlCheckout() {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  localStorage.setItem('totalCompra', calcularTotal());
   window.location.href = 'checkout.html';
 }

@@ -1,3 +1,5 @@
+// Inicialización: Traemos los datos del carrito salvados en la página anterior
+let carrito = JSON.parse(localStorage.getItem('carrito')) || []; 
 
 // Cambiar método de pago
 function cambiarMetodoPago(metodo) {
@@ -29,10 +31,17 @@ function validarDocumento(input) {
   }
 }
 
-// Actualizar resumen
+// Función auxiliar interna para calcular montos totales
+function calcularTotal() {
+  return carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+}
+
+// Actualizar resumen: Mapea los productos almacenados en localStorage
 function actualizarResumen() {
   const contenedor = document.getElementById('resumen-productos');
   const totalElement = document.getElementById('total-resumen');
+  
+  if (!contenedor || !totalElement) return;
   
   contenedor.innerHTML = carrito.map((item, index) => `
     <div class="resumen-item">
@@ -47,11 +56,12 @@ function actualizarResumen() {
   totalElement.textContent = `$${calcularTotal().toLocaleString('es-CO')}`;
 }
 
-// Procesar compra
+// Procesar compra con validación nativa del formulario
 function procesarCompra(e) {
   e.preventDefault();
   
   const form = document.getElementById('checkout-form');
+  if (!form) return;
   
   // Validar datos de envío
   const datosEnvio = {
@@ -68,8 +78,14 @@ function procesarCompra(e) {
     return;
   }
   
-  // Validar método de pago
-  const metodoPago = document.querySelector('input[name="metodo-pago"]:checked').value;
+  // Validar método de pago seleccionado
+  const opcionPagoChecked = document.querySelector('input[name="metodo-pago"]:checked');
+  if (!opcionPagoChecked) {
+    mostrarNotificacion('Por favor selecciona un método de pago', 'error');
+    return;
+  }
+  
+  const metodoPago = opcionPagoChecked.value;
   let validacionPago = { valido: false, errores: [] };
   
   if (metodoPago === 'tarjeta') {
@@ -95,44 +111,46 @@ function procesarCompra(e) {
     return;
   }
   
-  // Validar documento
+  // Validar carga del documento obligatorio
   const documento = document.getElementById('documento');
-  if (!documento.files.length) {
+  if (!documento || !documento.files.length) {
     mostrarNotificacion('Por favor carga un documento', 'error');
     return;
   }
   
-  // Si todo es válido, generar orden
+  // Generar orden si todo pasa los filtros
   const orden = generarOrdenCompra();
   mostrarConfirmacion(orden);
 }
 
-// Mostrar confirmación
+// Mostrar modal de confirmación y vaciar estado
 function mostrarConfirmacion(orden) {
   const modal = document.getElementById('modal-confirmacion');
   const numeroOrden = document.getElementById('numero-orden-modal');
   
-  numeroOrden.textContent = orden.numero;
-  modal.classList.add('activo');
+  if (numeroOrden) numeroOrden.textContent = orden.numero;
+  if (modal) modal.classList.add('activo');
   
-  // Guardar orden en localStorage (para descarga)
+  // Almacenar orden estructurada para descarga de archivo
   localStorage.setItem('ultima-orden', JSON.stringify(orden));
   
-  // Limpiar carrito
+  // Limpieza del carrito local diferida para evitar saltos en UI
   setTimeout(() => {
     carrito = [];
-    guardarCarrito();
+    localStorage.removeItem('carrito');
+    localStorage.removeItem('totalCompra');
   }, 2000);
 }
 
-// Ir al inicio
+// Retornar a la Landing
 function irAlInicio() {
   window.location.href = 'index.html';
 }
 
-// Descargar orden (simulado)
+// Descargar orden generada (Simulación de PDF/Comprobante)
 function descargarOrden() {
   const orden = JSON.parse(localStorage.getItem('ultima-orden'));
+  if (!orden) return;
   
   let contenido = `
 CONFIRMACIÓN DE COMPRA
@@ -142,7 +160,7 @@ Fecha: ${orden.fecha}
 Total: ${orden.total.toLocaleString('es-CO')}
 Artículos: ${orden.items}
 
-Gracias por tu compra.
+Gracias por tu compra en GlobalSeguros.
   `;
   
   const blob = new Blob([contenido], { type: 'text/plain' });
@@ -153,16 +171,21 @@ Gracias por tu compra.
   a.click();
 }
 
-// Inicialización
+// Inicialización controlada del DOM en el Checkout
 document.addEventListener('DOMContentLoaded', () => {
+  // Comprobación amistosa en la consola para saber que los datos llegaron
+  console.log("Datos del carrito recuperados:", carrito);
+
   if (carrito.length === 0) {
+    console.warn("El carrito está vacío. Redirigiendo a la tienda...");
     window.location.href = 'marketplace.html';
     return;
   }
   
+  // Pintar los datos en las tablas correspondientes
   actualizarResumen();
   
-  // Formato de tarjeta
+  // Formateador dinámico de Tarjeta de Crédito
   const numeroTarjeta = document.getElementById('numero-tarjeta');
   if (numeroTarjeta) {
     numeroTarjeta.addEventListener('input', (e) => {
@@ -172,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // Formato de fecha
+  // Formateador dinámico de Fecha de Expiración
   const fechaExpiracion = document.getElementById('fecha-expiracion');
   if (fechaExpiracion) {
     fechaExpiracion.addEventListener('input', (e) => {

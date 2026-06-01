@@ -318,6 +318,7 @@ nav ul li a:hover {
 .carrito-cantidad input[type="number"] {
     -moz-appearance: textfield;
 }
+
 /* Resumen matemático del Carrito */
 .carrito-resumen {
     border-top: 2px solid #e2e8f0;
