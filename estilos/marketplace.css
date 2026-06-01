@@ -197,7 +197,7 @@ nav ul li a:hover {
     background-color: #002060;
 }
 
-/* ESTILOS INTERNOS DEL CARRITO (SIDEBAR) */
+/* ESTILOS INTERNOS DEL CARRITO (SIDEBAR)*/
 .carrito-sidebar {
     flex: 1;
     min-width: 320px;
@@ -285,10 +285,14 @@ nav ul li a:hover {
 
 .carrito-cantidad input {
     width: 35px;
+    height: 24px; 
     text-align: center;
     border: 1px solid #cbd5e1;
     border-radius: 4px;
     padding: 2px 0;
+    font-family: inherit;
+    font-size: 13px;
+    background: #ffffff;
 }
 
 .btn-eliminar {
@@ -303,6 +307,17 @@ nav ul li a:hover {
     color: #d9381e;
 }
 
+/* Para Chrome, Safari, Edge y Opera */
+.carrito-cantidad input[type="number"]::-webkit-outer-spin-button,
+.carrito-cantidad input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+.carrito-cantidad input[type="number"] {
+    -moz-appearance: textfield;
+}
 /* Resumen matemático del Carrito */
 .carrito-resumen {
     border-top: 2px solid #e2e8f0;

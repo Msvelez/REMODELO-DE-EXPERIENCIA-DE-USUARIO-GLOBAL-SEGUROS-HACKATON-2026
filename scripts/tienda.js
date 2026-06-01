@@ -1,13 +1,11 @@
 // Inicialización del estado global del carrito
-let carrito = []; // array para almacenar los productos agregados al carrito
+let carrito = []; 
 
-// Simulación controlada por si main.js no carga la función origen
-// funcion asincrona que simula la carga de productos desde un archivo externo (JSON, API, etc.)
+// Función asíncrona para simular la carga de productos
 async function cargarProductos() {
   if (typeof window.cargarProductosDesdeArchivo === 'function') {
     return await cargarProductosDesdeArchivo();
   }
-  // Mock de datos oficial para visualización inmediata
   return {
     productos: [
       { 
@@ -36,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const gridProductos = document.getElementById('productos-grid');
   
   if (gridProductos) {
-    gridProductos.innerHTML = ''; // Limpiar contenedor
+    gridProductos.innerHTML = ''; 
     
     datosProductos.productos.forEach(producto => {
       const tarjeta = document.createElement('div');
@@ -57,7 +55,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
       `;
       
-      // Listener seguro que evita errores de strings/comillas en HTML inline
       tarjeta.querySelector('.btn-agregar').addEventListener('click', () => {
           agregarAlCarrito(producto.id, producto.nombre, producto.precio);
       });
@@ -69,13 +66,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   actualizarVistaCarrito();
 });
 
-// Lógica del Carrito de compras
+// Lógica operativa del Carrito de compras
 function agregarAlCarrito(id, nombre, precio) {
   const itemExistente = carrito.find(item => item.id === id);
   if (itemExistente) {
     itemExistente.cantidad += 1;
   } else {
-    carrito.push({ id, nombre, precio, cantidad: 1 });
+    carrito.push({ id, nombre, precio, quantity: 1, cantidad: 1 }); // Mantiene compatibilidad de propiedades
   }
   actualizarVistaCarrito();
 }
@@ -101,6 +98,7 @@ function eliminarDelCarrito(id) {
   actualizarVistaCarrito();
 }
  
+// RENDERIZADO INTERACTIVO
 function actualizarVistaCarrito() {
   const contenedor = document.querySelector('[data-carrito-items]');
   const totalElement = document.querySelector('[data-carrito-total]');
@@ -138,7 +136,6 @@ function actualizarVistaCarrito() {
     if (resumenContainer) resumenContainer.style.display = 'block';
     if (btnCheckout) btnCheckout.style.display = 'block';
     
-    // Gestión interactiva del indicador rojo del carrito
     if (contadorElement) {
       const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
       contadorElement.textContent = totalItems;
