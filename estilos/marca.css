@@ -231,25 +231,26 @@ nav ul a:hover {
 
 /* HERO imagen / Contenedor del Carrusel */
 .contenedor-carrusel {
-  position: relative;
-  width: 100%;
-  height: 100vh; 
-  overflow: hidden;
-  background: var(--azul-global); 
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden; 
+    background: var(--azul-global);
 }
 
 .carrusel-track {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  scroll-behavior: smooth;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;       /* Oculta la barra de scroll gris */
+    scroll-behavior: smooth;  /* Hace el movimiento suave */
+    width: 100%;
+    height: 100%;
 }
 
 .carrusel-tarjeta {
-  flex: 0 0 100%; 
-  width: 100%;
-  height: 100%;
+    flex: 0 0 100%;             
+    width: 100%;
+    height: 100%;
 }
 
 .carrusel-img {
@@ -1292,7 +1293,7 @@ footer {
   line-height: 1.4; 
 }
 
-/* ANIMATIONS */
+/* ANIMACIONES */
 .desplazar-arriba {
   opacity: 0; 
   transform: translateY(30px);
