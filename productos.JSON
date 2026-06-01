@@ -1,0 +1,74 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "GlobalMás Profesional - Plan Base",
+      "precio": 35000,
+      "descripcion": "Protección desde gestación hasta primer empleo",
+      "imagen": "https://via.placeholder.com/300x200?text=GlobalMas+Base",
+      "cobertura": "Educación universitaria completa",
+      "caracteristicas": [
+        "Desde gestación",
+        "Sin examen médico",
+        "Cobertura ante incapacidad",
+        "Acceso a app de seguimiento"
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "GlobalMás Profesional - Plan Plus",
+      "precio": 65000,
+      "descripcion": "Protección ampliada con beneficios adicionales",
+      "imagen": "https://via.placeholder.com/300x200?text=GlobalMas+Plus",
+      "cobertura": "Educación universitaria + posgrado",
+      "caracteristicas": [
+        "Todo del plan base",
+        "Cobertura de maestría",
+        "Asesoramiento educativo",
+        "Asistencia en trámites"
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "GlobalMás Profesional - Plan Premium",
+      "precio": 98000,
+      "descripcion": "Máxima protección para el futuro de tu hijo",
+      "imagen": "https://via.placeholder.com/300x200?text=GlobalMas+Premium",
+      "cobertura": "Educación completa sin límite",
+      "caracteristicas": [
+        "Todo del plan plus",
+        "Cobertura internacional",
+        "Fondo de emergencia educativa",
+        "Asesor dedicado 24/7"
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "GlobalMás Profesional - Plan Familia",
+      "precio": 120000,
+      "descripcion": "Protección para múltiples hijos",
+      "imagen": "https://via.placeholder.com/300x200?text=GlobalMas+Familia",
+      "cobertura": "Educación para hasta 3 hijos",
+      "caracteristicas": [
+        "Todo del plan premium",
+        "Descuento por hermanos",
+        "Cobertura conjunta de padres",
+        "Beneficios grupales"
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "GlobalMás Profesional - Plan Emprendedor",
+      "precio": 85000,
+      "descripcion": "Perfecto para padres emprendedores",
+      "imagen": "https://via.placeholder.com/300x200?text=GlobalMas+Emprendedor",
+      "cobertura": "Educación + capital semilla empresarial",
+      "caracteristicas": [
+        "Educación universitaria",
+        "Capital para iniciar negocio",
+        "Mentoría empresarial",
+        "Cobertura de riesgos comerciales"
+      ]
+    }
+  ]
+}

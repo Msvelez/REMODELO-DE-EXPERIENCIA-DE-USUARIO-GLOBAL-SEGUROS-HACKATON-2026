@@ -1,31 +1,42 @@
 // Inicialización del estado global del carrito
 let carrito = []; 
 
-// Función asíncrona para simular la carga de productos
+// FUNCIÓN CORREGIDA: Ahora se conecta de forma real a tu archivo JSON externo
 async function cargarProductos() {
-  if (typeof window.cargarProductosDesdeArchivo === 'function') {
-    return await cargarProductosDesdeArchivo();
+  try {
+    const respuesta = await fetch('productos.json'); // Asegúrate de correrlo usando Live Server de VS Code
+    
+    if (!respuesta.ok) {
+      throw new Error(`Error al cargar el JSON: ${respuesta.status}`);
+    }
+    
+    const datos = await respuesta.json();
+    return datos;
+    
+  } catch (error) {
+    console.error("Hubo un problema obteniendo los productos desde el JSON:", error);
+    // Mock de respaldo para que la app no se rompa si el JSON falla temporalmente
+    return {
+      productos: [
+        { 
+          id: 1, 
+          nombre: "GlobalMás Profesional", 
+          descripcion: "Asegura el futuro educativo superior de tus hijos con flexibilidad total.", 
+          precio: 150000, 
+          caracteristicas: ["Protección Integral", "Respaldo Financiero Garantizado"], 
+          imagen: "https://via.placeholder.com/280x200/deebf7/002060?text=GlobalM%C3%A1s" 
+        },
+        { 
+          id: 2, 
+          nombre: "GlobalPregrado", 
+          descripcion: "La solución ideal diseñada para cubrir costos universitarios con anticipación.", 
+          precio: 220000, 
+          caracteristicas: ["Rendimiento Seguro", "Desembolsos Directos"], 
+          imagen: "https://via.placeholder.com/280x200/deebf7/002060?text=GlobalPregrado" 
+        }
+      ]
+    };
   }
-  return {
-    productos: [
-      { 
-        id: 1, 
-        nombre: "GlobalMás Profesional", 
-        descripcion: "Asegura el futuro educativo superior de tus hijos con flexibilidad total.", 
-        precio: 150000, 
-        caracteristicas: ["Protección Integral", "Respaldo Financiero Garantizado"], 
-        imagen: "https://via.placeholder.com/280x200/deebf7/002060?text=GlobalM%C3%A1s" 
-      },
-      { 
-        id: 2, 
-        nombre: "GlobalPregrado", 
-        descripcion: "La solución ideal diseñada para cubrir costos universitarios con anticipación.", 
-        precio: 220000, 
-        caracteristicas: ["Rendimiento Seguro", "Desembolsos Directos"], 
-        imagen: "https://via.placeholder.com/280x200/deebf7/002060?text=GlobalPregrado" 
-      }
-    ]
-  };
 }
 
 // Cargar productos en pantalla al iniciar el DOM
@@ -72,7 +83,7 @@ function agregarAlCarrito(id, nombre, precio) {
   if (itemExistente) {
     itemExistente.cantidad += 1;
   } else {
-    carrito.push({ id, nombre, precio, quantity: 1, cantidad: 1 }); // Mantiene compatibilidad de propiedades
+    carrito.push({ id, nombre, precio, cantidad: 1 });
   }
   actualizarVistaCarrito();
 }
@@ -81,6 +92,7 @@ function calcularTotal() {
   return carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
 }
 
+// Actualiza las cantidades de inputs de forma fluida y sin crasheos
 function actualizarCantidad(id, nuevaCantidad) {
   const item = carrito.find(item => item.id === id);
   if (item) {
@@ -98,7 +110,7 @@ function eliminarDelCarrito(id) {
   actualizarVistaCarrito();
 }
  
-// RENDERIZADO INTERACTIVO
+// RENDERIZADO INTERACTIVO: Controla el refresco dinámico sin pintar subtotal ni envío
 function actualizarVistaCarrito() {
   const contenedor = document.querySelector('[data-carrito-items]');
   const totalElement = document.querySelector('[data-carrito-total]');
