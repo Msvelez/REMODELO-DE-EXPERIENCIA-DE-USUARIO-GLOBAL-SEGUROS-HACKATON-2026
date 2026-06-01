@@ -3,264 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout - GlobalMás Profesional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos/checkout.css">
+  <title>Checkout - Global Seguros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/marca.css">
+<link rel="stylesheet" href="estilos/checkout.css">
 </head>
 <body>
-<!-- NAV -->
-<nav>
-  <div class="logotipo">
-    <img src="multimedia/logo-globalseguros-2025.svg" alt="Global Seguros Logo" class="logotipo-imagen" style="max-width: 150px;">
-  </div>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="marketplace.html">Tienda</a></li>
-  </ul>
-</nav>
 
-<div class="checkout-contenedor">
-  <!-- FORMULARIO PRINCIPAL -->
-  <form class="checkout-form" id="checkout-form" onsubmit="procesarCompra(event)">
+  <nav class="navbar">
+    <div class="logotipo">
+      <img src="multimedia/logo-globalseguros-2025.svg" alt="Global Seguros Logo" class="logotipo-imagen">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="marketplace.html">Tienda</a></li>
+    </ul>
+  </nav>
+
+  <div class="checkout-container">
     
-    <!-- PASO 1: DATOS DE ENVÍO -->
-    <div class="checkout-paso">
-      <div class="paso-titulo">
-        <div class="paso-numero">1</div>
-        <h2>Datos de Envío</h2>
-      </div>
+    <main class="checkout-principal">
       
-      <div class="form-doble">
-        <div class="formulario-grupo">
-          <label for="nombre">Nombre Completo *</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez García" required>
+      <section class="checkout-card">
+        <h2>Datos de Envío</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo *</label>
+            <input type="text" id="nombre" placeholder="Juan Pérez García" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" placeholder="310 1234567" required>
+          </div>
+          
+          <div class="form-group full-width">
+            <label for="direccion">Dirección *</label>
+            <input type="text" id="direccion" placeholder="Calle 123 #45-67" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="ciudad">Ciudad *</label>
+            <input type="text" id="ciudad" placeholder="Bogotá" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="departamento">Departamento *</label>
+            <input type="text" id="departamento" placeholder="Cundinamarca" required>
+          </div>
         </div>
-        <div class="formulario-grupo">
-          <label for="telefono">Teléfono *</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="310 1234567" required>
-        </div>
-      </div>
+      </section>
 
-      <div class="formulario-grupo">
-        <label for="direccion">Dirección *</label>
-        <input type="text" id="direccion" name="direccion" placeholder="Calle 123 #45-67" required>
-      </div>
-
-      <div class="form-doble">
-        <div class="formulario-grupo">
-          <label for="ciudad">Ciudad *</label>
-          <input type="text" id="ciudad" name="ciudad" placeholder="Bogotá" required>
-        </div>
-        <div class="formulario-grupo">
-          <label for="departamento">Departamento *</label>
-          <input type="text" id="departamento" name="departamento" placeholder="Cundinamarca" required>
-        </div>
-      </div>
-    </div>
-
-    <!-- PASO 2: MÉTODO DE ENVÍO -->
-    <div class="checkout-paso">
-      <div class="paso-titulo">
-        <div class="paso-numero">2</div>
+      <section class="checkout-card">
         <h2>Método de Envío</h2>
+        <p class="section-subtitle">Selecciona un método:</p>
+        
+        <div class="metodos-envio-grid">
+          <label class="metodo-opcion">
+            <input type="radio" name="metodo_envio" value="estandar" checked>
+            <div class="metodo-contenido">
+              <span class="metodo-icono">📦</span>
+              <div class="metodo-detalles">
+                <strong>Estándar</strong>
+                <span>5-7 días</span>
+              </div>
+            </div>
+          </label>
+
+          <label class="metodo-opcion">
+            <input type="radio" name="metodo_envio" value="express">
+            <div class="metodo-contenido">
+              <span class="metodo-icono">⚡</span>
+              <div class="metodo-detalles">
+                <strong>Express</strong>
+                <span>2-3 días</span>
+              </div>
+            </div>
+          </label>
+        </div>
+      </section>
+    </main>
+
+    <aside class="checkout-sidebar">
+      <div class="checkout-card resumen-card">
+        <h2>📋 Resumen de Compra</h2>
+        
+        <div class="resumen-fila">
+          <span>Subtotal:</span>
+          <span>$0</span>
+        </div>
+        <div class="resumen-fila">
+          <span>Envío:</span>
+          <span class="envio-gratis">Gratuito</span>
+        </div>
+        
+        <div class="resumen-total">
+          <span>Total:</span>
+          <span class="total-monto">$0</span>
+        </div>
+        
+        <button class="btn-pagar">Finalizar y Pagar</button>
       </div>
+    </aside>
 
-      <div class="formulario-grupo">
-        <label>Selecciona un método:</label>
-        <div class="metodo-pago" style="grid-template-columns: repeat(2, 1fr);">
-          <div class="metodo-opcion">
-            <input type="radio" id="envio-estandar" name="metodo-envio" value="estandar" checked>
-            <label for="envio-estandar" class="metodo-label">
-              <div class="metodo-icono">📦</div>
-              <div class="metodo-nombre">Estándar</div>
-              <div style="font-size: 12px; color: var(--gris-medio);">5-7 días</div>
-            </label>
-          </div>
-          <div class="metodo-opcion">
-            <input type="radio" id="envio-express" name="metodo-envio" value="express">
-            <label for="envio-express" class="metodo-label">
-              <div class="metodo-icono">⚡</div>
-              <div class="metodo-nombre">Express</div>
-              <div style="font-size: 12px; color: var(--gris-medio);">2-3 días</div>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PASO 3: MÉTODO DE PAGO -->
-    <div class="checkout-paso">
-      <div class="paso-titulo">
-        <div class="paso-numero">3</div>
-        <h2>Método de Pago</h2>
-      </div>
-
-      <div class="formulario-grupo">
-        <div class="metodo-pago">
-          <div class="metodo-opcion">
-            <input type="radio" id="pago-tarjeta" name="metodo-pago" value="tarjeta" checked onchange="cambiarMetodoPago('tarjeta')">
-            <label for="pago-tarjeta" class="metodo-label">
-              <div class="metodo-icono">💳</div>
-              <div class="metodo-nombre">Tarjeta</div>
-            </label>
-          </div>
-          <div class="metodo-opcion">
-            <input type="radio" id="pago-efectivo" name="metodo-pago" value="efectivo" onchange="cambiarMetodoPago('efectivo')">
-            <label for="pago-efectivo" class="metodo-label">
-              <div class="metodo-icono">💵</div>
-              <div class="metodo-nombre">Efectivo</div>
-            </label>
-          </div>
-          <div class="metodo-opcion">
-            <input type="radio" id="pago-billetera" name="metodo-pago" value="billetera" onchange="cambiarMetodoPago('billetera')">
-            <label for="pago-billetera" class="metodo-label">
-              <div class="metodo-icono">📱</div>
-              <div class="metodo-nombre">Billetera</div>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAGO POR TARJETA -->
-      <div id="metodo-tarjeta" class="metodo-contenido activo">
-        <div class="formulario-grupo">
-          <label for="banco">Banco *</label>
-          <select id="banco" name="banco" required>
-            <option value="">Selecciona un banco</option>
-            <option value="Bancolombia">Bancolombia</option>
-            <option value="Banco de Bogotá">Banco de Bogotá</option>
-            <option value="Davivienda">Davivienda</option>
-            <option value="BBVA">BBVA</option>
-          </select>
-        </div>
-
-        <div class="formulario-grupo">
-          <label for="numero-tarjeta">Número de Tarjeta (16 dígitos) *</label>
-          <input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="4532 1234 5678 9010" inputmode="numeric" maxlength="19">
-        </div>
-
-        <div class="formulario-grupo">
-          <label for="titular">Nombre del Titular *</label>
-          <input type="text" id="titular" name="titular" placeholder="Juan Pérez García">
-        </div>
-
-        <div class="form-doble">
-          <div class="formulario-grupo">
-            <label for="fecha-expiracion">Fecha (MM/YY) *</label>
-            <input type="text" id="fecha-expiracion" name="fecha-expiracion" placeholder="12/25" maxlength="5">
-          </div>
-          <div class="formulario-grupo">
-            <label for="cvv">CVV (3 dígitos) *</label>
-            <input type="text" id="cvv" name="cvv" placeholder="123" inputmode="numeric" maxlength="3">
-          </div>
-        </div>
-      </div>
-
-      <!-- PAGO EN EFECTIVO -->
-      <div id="metodo-efectivo" class="metodo-contenido">
-        <div class="formulario-grupo">
-          <label for="proveedor-efectivo">Proveedor *</label>
-          <select id="proveedor-efectivo" name="proveedor-efectivo">
-            <option value="">Selecciona un proveedor</option>
-            <option value="Efecty">Efecty</option>
-            <option value="Baloto">Baloto</option>
-          </select>
-        </div>
-        <div style="background: var(--azul-claro); padding: 12px; border-radius: 8px; font-size: 13px; color: var(--azul-oscuro); margin-top: 16px;">
-          ⓘ Se generará una referencia de pago. Tienes 96 horas para pagar en puntos autorizados.
-        </div>
-      </div>
-
-      <!-- PAGO CON BILLETERA -->
-      <div id="metodo-billetera" class="metodo-contenido">
-        <div class="formulario-grupo">
-          <label for="billetera-digital">Billetera Digital *</label>
-          <select id="billetera-digital" name="billetera-digital">
-            <option value="">Selecciona una billetera</option>
-            <option value="Nequi">Nequi</option>
-            <option value="Daviplata">Daviplata</option>
-            <option value="Movii">Movii</option>
-            <option value="Tpaga">Tpaga</option>
-          </select>
-        </div>
-        <div style="background: var(--azul-claro); padding: 12px; border-radius: 8px; font-size: 13px; color: var(--azul-oscuro); margin-top: 16px;">
-          ⓘ Se te redirigirá a tu billetera para confirmar el pago.
-        </div>
-      </div>
-    </div>
-
-    <!-- PASO 4: DOCUMENTOS (PARA SEGUROS) -->
-    <div class="checkout-paso">
-      <div class="paso-titulo">
-        <div class="paso-numero">4</div>
-        <h2>Documentación</h2>
-      </div>
-
-      <div class="formulario-grupo">
-        <label>Carga tu documento de identidad *</label>
-        <div class="documento-input-wrapper" onclick="document.getElementById('documento').click()">
-          <input type="file" id="documento" name="documento" accept=".pdf,.png,.jpg,.jpeg" onchange="validarDocumento(this)">
-          <div style="font-size: 24px;">📄</div>
-          <div style="color: var(--azul); font-weight: 600;">Haz clic o arrastra tu archivo</div>
-          <div class="documento-info">PDF, PNG o JPG (máximo 7MB)</div>
-        </div>
-        <div id="documento-estado"></div>
-      </div>
-    </div>
-
-    <!-- BOTÓN DE ENVÍO -->
-    <button type="submit" class="btn-enviar" id="btn-enviar">Procesar Compra</button>
-  </form>
-
-  <!-- RESUMEN LATERAL -->
-  <div class="checkout-resumen">
-    <div class="resumen-titulo">📋 Resumen de Compra</div>
-    
-    <div id="resumen-productos">
-      <!-- Se llena con JavaScript -->
-    </div>
-
-    <div class="resumen-total">
-      <span>Total:</span>
-      <span id="total-resumen">$0</span>
-    </div>
   </div>
-</div>
 
-<!-- MODAL DE CONFIRMACIÓN -->
-<div id="modal-confirmacion" class="modal">
-  <div class="modal-contenido">
-    <div class="modal-icono">✅</div>
-    <div class="modal-titulo">¡Compra Realizada!</div>
-    <div class="modal-texto">Tu orden ha sido procesada exitosamente.</div>
-    <div class="modal-numero-orden" id="numero-orden-modal"></div>
-    <div class="modal-texto" style="font-size: 13px;">
-      Se ha enviado un correo de confirmación con los detalles de tu compra.
-    </div>
-    <div class="modal-botones">
-      <button class="btn-modal btn-modal-primario" onclick="irAlInicio()">Volver al Inicio</button>
-      <button class="btn-modal btn-modal-secundario" onclick="descargarOrden()">Descargar Orden</button>
-    </div>
-  </div>
-</div>
-
-<!-- NOTIFICACIONES -->
-<div data-notificaciones></div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="pie-superior">
-    <div class="pie-marca">
-      <div class="logotipo-texto"><img src="multimedia/logo2-1.png" alt="Global Seguros Logo" style="max-width: 150px;"></div>
-      <p>Transformamos la complejidad de los seguros en un camino digital fluido.</p>
-    </div>
-  </div>
-  <div class="pie-inferior">
-    <span>© 2026 Global Seguros de Vida S.A.</span>
-  </div>
-</footer>
-
-<script src="scripts/main.js"></script>
-<script src="scripts/checkout.js"></script>
 </body>
 </html>
