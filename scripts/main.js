@@ -1,12 +1,16 @@
-
+// 1. Acordeón de Preguntas Frecuentes (FAQ)
 function toggleFaq(btn) {
   const item = btn.parentElement;
   const isOpen = item.classList.contains('abierto');
+  
+  // Cierra todas las demás preguntas
   document.querySelectorAll('.preguntas-elemento').forEach(i => i.classList.remove('abierto'));
+  
+  // Si no estaba abierta, la abre
   if (!isOpen) item.classList.add('abierto');
 }
 
-// scroll
+// 2. Animación de entrada con Scroll (Intersection Observer)
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -16,6 +20,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
+
 document.querySelectorAll('.dolor-tarjeta, .beneficio-tarjeta, .testimonio-tarjeta, .experiencia-paso').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
@@ -23,17 +28,19 @@ document.querySelectorAll('.dolor-tarjeta, .beneficio-tarjeta, .testimonio-tarje
   observer.observe(el);
 });
 
-// pasos
-document.querySelectorAll('.como-paso').forEach((step, i) => {
+// 3. Interacción de los 3 pasos fijos (Sección "Cómo Funciona")
+// Corregido: Ahora busca '.como-paso-card' para conectar con las tarjetas de tu HTML
+document.querySelectorAll('.como-paso-card').forEach((step) => {
   step.addEventListener('click', () => {
-    document.querySelectorAll('.como-paso').forEach(s => s.classList.remove('activo'));
+    document.querySelectorAll('.como-paso-card').forEach(s => s.classList.remove('activo'));
     step.classList.add('activo');
   });
 });
 
-// Carrusel
+// 4. Temporizador del Carrusel Automático (Hero Section)
 document.addEventListener("DOMContentLoaded", () => {
-    const track = document.getElementById("carrusel-track");
+    // Corregido: Cambiado a querySelector('.carrusel-track') para que conecte con la clase del HTML
+    const track = document.querySelector(".carrusel-track");
     
     if (track) {
         const tarjetas = track.querySelectorAll(".carrusel-tarjeta");
@@ -41,22 +48,20 @@ document.addEventListener("DOMContentLoaded", () => {
         let indiceActual = 0;
 
         const autoDeslizar = () => {
-            // Incrementamos el índice para pasar a la siguiente imagen
             indiceActual++;
 
-            // Si llegamos al final (después de la tercera), reseteamos al primer elemento
             if (indiceActual >= totalImagenes) {
                 indiceActual = 0;
             }
 
-            // Calculamos la posición exacta multiplicando el ancho del contenedor por el índice
+            // Calcula la posición exacta multiplicando el ancho actual por el índice
             const posicionDestino = track.offsetWidth * indiceActual;
             
-            // Forzamos el scroll horizontal a esa posición exacta
+            // Fuerza el scroll horizontal al contenedor
             track.scrollLeft = posicionDestino;
         };
 
-        // Configura el temporizador (3500 milisegundos = 3.5 segundos)
+        // Ejecuta el deslizamiento cada 3.5 segundos como lo tenías configurado
         setInterval(autoDeslizar, 3500);
     }
 });
