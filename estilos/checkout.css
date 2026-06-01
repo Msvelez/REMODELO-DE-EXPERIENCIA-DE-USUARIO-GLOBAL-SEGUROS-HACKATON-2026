@@ -1,6 +1,4 @@
-/* ==========================================================================
-   VARIABLES Y ESTILOS BASE
-   ========================================================================== */
+/* VARIABLES Y ESTILOS BASE */
 :root {
   --azul-oscuro: #002060;
   --azul: #00327D;
@@ -25,9 +23,7 @@ body {
   padding-top: 80px; /* Espacio para que el navbar fijo no tape el contenido */
 }
 
-/* ==========================================================================
-   HEADER / NAVBAR (Opcional simplificado)
-   ========================================================================== */
+/*  HEADER / NAVBAR (Opcional simplificado)*/
 .navbar {
   position: fixed;
   top: 0;
@@ -59,9 +55,7 @@ body {
   font-weight: 600;
 }
 
-/* ==========================================================================
-   LAYOUT PRINCIPAL (CONTENEDOR EN DOS COLUMNAS)
-   ========================================================================== */
+/*LAYOUT PRINCIPAL (CONTENEDOR EN DOS COLUMNAS)*/
 .checkout-container {
   display: grid;
   grid-template-columns: 1fr 380px; /* Formulario ancho, sidebar estrecho */
@@ -90,9 +84,7 @@ body {
   border-bottom: 2px solid var(--azul-claro);
 }
 
-/* ==========================================================================
-   FORMULARIO DE ENVÍO
-   ========================================================================== */
+/*  FORMULARIO DE ENVÍO */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -132,9 +124,7 @@ body {
   box-shadow: 0 0 0 3px rgba(0, 50, 125, 0.1);
 }
 
-/* ==========================================================================
-   MÉTODOS DE ENVÍO (CON SELECCIÓN RADIO CUSTOM)
-   ========================================================================== */
+/*MÉTODOS DE ENVÍO (CON SELECCIÓN RADIO CUSTOM)*/
 .section-subtitle {
   font-size: 14px;
   color: var(--gris-medio);
@@ -201,9 +191,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 50, 125, 0.08);
 }
 
-/* ==========================================================================
-   SIDEBAR / RESUMEN DE COMPRA
-   ========================================================================== */
+/* SIDEBAR / RESUMEN DE COMPRA */
 .checkout-sidebar {
   position: sticky;
   top: 110px; /* Se queda estático al hacer scroll hacia abajo */
@@ -231,9 +219,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 2px dashed var(--azul-claro);
+  margin-top: 10px;      
+  padding-top: 0;      
+  border-top: none;      
 }
 
 .resumen-total span {
@@ -270,9 +258,7 @@ body {
   transform: scale(0.99);
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN (TABLETS Y MÓVILES)
-   ========================================================================== */
+/*RESPONSIVE DESIGN (TABLETS Y MÓVILES) */
 @media (max-width: 992px) {
   .checkout-container {
     grid-template-columns: 1fr; /* Pasa a una sola columna en pantallas medianas */
