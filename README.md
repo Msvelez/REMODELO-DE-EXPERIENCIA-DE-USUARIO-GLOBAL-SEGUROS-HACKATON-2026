@@ -1,123 +1,41 @@
-# GlobalMás Profesional - Proyecto Final Lenguajes Digitales III
-Sitio web de e-commerce para la venta de productos de seguros educativos, desarrollado con HTML5 semántico, CSS3 responsivo, y JavaScript vanilla.
+# Global Seguros - Plataforma Digital Modular
 
-📋 Contenido del Proyecto
-globalseguros-ecommerce/
-├── index.html              # Página de inicio (home)
-├── marketplace.html        # Tienda/catálogo de productos
-├── checkout.html          # Proceso de compra (pago y envío)
-├── error_404.html         # Página de error 404
-├── marca.css              # Estilos globales
-├── main.js                # JavaScript principal
-└── README.md             # Este archivo
-
-🎯 Características Implementadas
-    
-### 1. HTML5 Semántico
-* Etiquetas semánticas correctas (`<nav>`, `<section>`, `<footer>`, `<header>`, `<article>`)
-* Jerarquía de encabezados coherente (`h1`, `h2`, `h3`)
-* Formulario de contacto con validación HTML5
-* Formulario de compra completo
-* Imágenes con atributo `alt` descriptivo
-* Metaetiquetas completas (`charset`, `viewport`, `description`)
-
-### 2. CSS3 Diseño y Estilización
-* Archivos CSS externos organizados
-* Flexbox y CSS Grid implementados
-* Variables CSS para colores y tipografías
-* Tipografías externas desde Google Fonts (Asap)
-* Diseño responsivo: móvil (<480px), tablet (481-1024px), escritorio (>1024px)
-* Animaciones y transiciones CSS (hover, scroll reveal, etc.)
-* Paleta de colores consistente
-
-### 3. JavaScript Vanilla
-* Manipulación del DOM
-* Validación de formulario en tiempo real
-* Sistema de carrito de compras (`localStorage`)
-* Proceso de compra completo
-* Pruebas unitarias positivas implementadas
-
-### 4. Git y Deploy
-* Historial de commits descriptivos en español
-* Estructura de carpetas organizada
-* Desplegado en GitHub Pages
+## 👥 Miembros del Grupo
+* **María Sofía Vélez Arrubla** — [GitHub Profile](https://github.com/Msvelez)
+* **Emily Vanesa Chisaba Rivera** — [GitHub Profile](https://github.com/lychee-zzz)
+* **Angye Paola Laverde Pérez** — [GitHub Profile](https://github.com/angyelaverde)
 
 ---
 
-🚀 Características Avanzadas (Puntos Extra)
+## 📝 Descripción del Proyecto
+Este proyecto es una plataforma web interactiva diseñada para **Global Seguros S.A.**, una entidad enfocada en la comercialización de soluciones financieras, fondos de pensión voluntaria y seguros educativos. La aplicación está dirigida a un público familiar y profesionales independientes que buscan blindar su patrimonio frente a la inflación y garantizar la estabilidad del mañana de forma simple y digital.
 
-### Formularios
-* Validación HTML5 de email, requeridos, etc.
-* Validación en tiempo real con JavaScript
-* Mensajes de error dinámicos
-* Feedback visual (campos válidos/inválidos)
+### Funcionalidades Clave
+* **Landing Page de Conversión:** Presentación del portafolio con secciones dinámicas de dolor, valor y una experiencia de usuario (UX) fluida y sin fricciones.
+* **Tienda Virtual (Marketplace):** Un catálogo dinámico conectado a un archivo de datos estructurado (`productos.json`) que permite agregar, modificar cantidades y eliminar asistencias médicas o seguros en tiempo real.
+* **Flujo de Simulación de Pago (Checkout):** Un ecosistema modular con validación nativa de formularios, máscaras interactivas de tarjetas de crédito y carga de documentación obligatoria.
 
-### JavaScript Avanzado
-* **Validación de fechas usando objeto Date:** Validación de fecha de expiración de tarjetas para verificar que no esté vencida.
-* **Funcionalidades avanzadas:**
-    * Sistema de carrito completo
-    * Validación de tarjeta (16 dígitos)
-    * Validación de CVV (3 dígitos)
-    * Validación de teléfono (Colombia)
-    * Cálculo de totales dinámicos
-
-### Responsividad
-* Diseño responsive soportado para tablets (481px - 1024px)
-* Media queries para móvil y escritorio
-* Interfaces adaptables a todos los tamaños
+### Solución Técnica del Reto
+El núcleo del reto de la aseguradora y el flujo del e-commerce se resolvieron de forma **100% nativa en el Frontend** utilizando la API de **`localStorage`**. Esto permitió crear un puente de memoria persistente entre páginas independientes (`marketplace.html` $\rightarrow$ `checkout.html`), garantizando que el desglose de los productos seleccionados y el cálculo exacto del subtotal se mantengan e impriman correctamente en el resumen sin depender de servidores o bases de datos complejas durante la simulación.
 
 ---
 
-📱 Páginas Desarrolladas
+## 💻 Requisitos Mínimos
+Para ejecutar, visualizar y probar la plataforma correctamente en un entorno local, se requiere el siguiente software preinstalado:
 
-### 1. Home (index.html)
-* Hero section con propuesta de valor
-* Sección "Sobre la empresa" con estadísticas
-* Catálogo destacado de servicios
-* Testimonios de clientes
-* FAQ interactivo
-* Formulario de contacto con validación
-* Sección de beneficios
-* CTA (Call To Action) final
-
-### 2. Marketplace/Tienda (marketplace.html)
-* Banner de bienvenida
-* Grilla de productos
-* Información detallada por producto
-* Carrito de compras en tiempo real
-* Contador visual del carrito
-* Resumen de compra
-* Botón para proceder a checkout
-
-### 3. Checkout (checkout.html)
-Proceso de compra completo implementando el algoritmo del PDF:
-* **Paso 1: Datos de Envío** (Nombre mín. 3 caracteres, teléfono Colombia, dirección, ciudad y departamento).
-* **Paso 2: Método de Envío** (Estándar 5-7 días / Express 2-3 días).
-* **Paso 3: Métodos de Pago**
-    * *Tarjeta Débito/Crédito:* Selección de banco, número (16 dígitos), titular, vencimiento (MM/YY) y CVV (3 dígitos).
-    * *Pago en Efectivo:* Selección de proveedor (Efecty, Baloto) con generación de referencia y límite de 96 horas.
-    * *Billeteras Digitales:* Nequi, Daviplata, Movii, Tpaga.
-* **Paso 4: Documentación (Seguros):** Carga de documento (PDF, PNG, JPG; máx. 7MB) con feedback visual.
-* **Confirmación:** Generación de número de orden (`ORD-YYYYMMDD-XXXXXX`), modal de confirmación, descarga de orden y limpieza automática del carrito.
-
-### 4. Página de Error 404
-* Diseño creativo, consistente y animaciones atractivas.
-* Breadcrumb de navegación y botones de retorno.
+* **Navegador Web Moderno:** Google Chrome, Mozilla Firefox o Microsoft Edge con soporte para JavaScript (ES6+).
+* **Editor de Código:** Visual Studio Code (o similar).
+* **Servidor Local de Desarrollo (Obligatorio):** Extensión **Live Server** para Visual Studio Code o un entorno local equivalente. *Nota: Es indispensable para resolver las restricciones de seguridad (CORS) del navegador al realizar peticiones asíncronas (`fetch`) al archivo `productos.json`.*
 
 ---
 
-🔐 Validaciones Implementadas
+## 🛠️ Recursos y Herramientas
 
-* **Validación de Email:** `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`
-* **Validación de Teléfono (Colombia):** `/^(\+57|0057|57)?[\s]?(1|3)[\s]?[0-9]{8,10}$/`
-* **Validación de Tarjeta:** 16 dígitos exactos en formato numérico.
-* **Validación de Fecha de Expiración:** Formato MM/YY, mes válido (1-12) y verificación de no vencimiento.
-* **Validación de CVV:** 3 dígitos exactos.
-* **Validación de Documentos:** Extensiones PDF, PNG, JPG (Máx. 7MB).
+### Software y Gestión de Código
+* **Lenguajes:** HTML5, CSS3 (Animaciones y maquetación responsiva) y JavaScript Nativo (Vanilla JS).
+* **Control de Versiones:** Git y GitHub para el despliegue del repositorio.
+* **Tipografía:** Google Fonts (Familia tipográfica *Asap* integrada mediante CDN).
 
----
-
-📊 Pruebas Unitarias
-Se implementaron **22 pruebas unitarias positivas** ejecutables en la consola del navegador mediante la función:
-```javascript
-ejecutarPruebas()
+### Recursos Externos y de Terceros
+* **Bancos de Imágenes y Multimedia:** Elementos visuales mock y avatares vectoriales integrados mediante URLs de marcadores de posición optimizados para pruebas de carga.
+* **Diseño e Iconografía:** Emojis nativos unicode integrados directamente en el marcado HTML para optimizar el rendimiento y la velocidad de renderizado de la interfaz.
