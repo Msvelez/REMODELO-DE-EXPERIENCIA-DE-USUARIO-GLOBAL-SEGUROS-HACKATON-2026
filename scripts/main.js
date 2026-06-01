@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setInterval(autoDeslizar, 3000);
     }
 });
+// Lógica nativa de scroll, pero envuelta en un window.onload para obligar al navegador a esperar que carguen las imágenes antes de moverlas
 window.onload = function() {
     const track = document.getElementById("carrusel-track");
     
